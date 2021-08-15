@@ -1,19 +1,18 @@
 * 入门
-  * 快速开始
-  * 快速安装
+  * [快速开始](/)
+  * [快速安装](/start-install)
   * 快速测试
-* [主题](/theme-index.md)
-  * [快速开始](/theme-start.md)
-  * [主题语法](theme-pragma.md)
-  * [变量大全](theme-vars.md)
-* [核心](/core-index.md)
-  * 快速开始
-  * 配置文件
+* 核心
+  * [快速开始](/core-index.md)
+  * [配置文件](/core-config)
   * 核心规范
+* 开服器
+  * 快速开始
+  * 进阶操作
 * 整合包
   * 快速开始
   * 配置文件
   * 安装方式
   * 整合包规范
 * 插件
-  * 待开发
+  * [快速开始](/plugin-index)

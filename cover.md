@@ -1,12 +1,12 @@
-![logo](images/logo.svg)
+![logo](logo.png)
 
-# EasyCraft 开发文档
+# EasyCraft 二次开发文档
 
 > 快速开始你的二次开发之旅
 
 - 核心
 - 插件
-- 主题
+- 开服器
 - 整合包
 - 还有更多!
 
