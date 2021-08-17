@@ -8,7 +8,7 @@
 {
 	"id": "com.mojang.bds.1.17.11.01",
 	"info": {
-		"device": 0,
+		"device": 1,
 		"branch": "BDS",
 		"name": "[BDS] 1.17.11.01"
 	},
@@ -16,8 +16,9 @@
 		"program": "bedrock-server.exe", // 程序路径
 		"param": "" // 参数
 	},
-	"configs": { // 目前只支持简单对象的修改
-		"server.properties":{
+	"configs": [ // 目前只支持简单对象的修改
+		{
+            "file":"server.properties",
 			"name": "服务器配置文件",
 			"type": "properties", // json , ini , yaml , properties
 			"known": [
@@ -66,7 +67,7 @@
 				}
 			]
 		}
-	}
+	]
 }
 ```
 
@@ -89,8 +90,11 @@
 
 ## configs
 
-服务器的配置项 , 格式为`key`:`{ ... }` . 其中, key 为文件路径.
+> 你也可以为了减小核心配置体积,将此配置项单独出来放置在一个json文件中, 如 `bds-config.json` ,然后将其放置在 `/data/cores/configs` 目录下. 在 `configs` 处你只需要填写 `bds-config`. 此文件内容格式同`configs` 的格式.
 
+服务器的配置项 
+
+* `file`: 配置文件名
 * `name`: 文件友好名称,显示在前端
 * `type`: 文件类型 (可选类型 `properties` , `json` , `yaml` , `ini`)
 * `known`: 已知的配置项数组
@@ -98,11 +102,12 @@
 ### known
 
 * `key`: 配置项在文件中的名称
-* `name`: 配置项的友好名称
+* `display`: 配置项的友好名称
 * `type`: 配置项类型 ( `0` - 布尔值  `1` - 文本型  `2` - 选择器型)
 * `visible`: 是否在前端可视 (默认: `true`)
 * `selection`: 选择器选项数组
   * `display`: 友好名称,将会显示到前端
   * `value`: 值
 * `force`: 是否强制使用值
-* `value`: 强制使用的值, 可使用 [服务器变量](/core-servervar)
+* `default`: 是否使用默认值, 如未被设置将会设置
+* `value`: 强制使用 / 默认 的值, 可使用 [服务器变量](/core-servervar)

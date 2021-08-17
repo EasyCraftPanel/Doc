@@ -16,3 +16,4 @@
   * 整合包规范
 * 插件
   * [快速开始](/plugin-index)
+  * [插件结构](/plugin-structure)

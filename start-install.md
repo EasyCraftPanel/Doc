@@ -5,6 +5,7 @@
 * 核心: `/data/cores/*`
 * 整合包: `/data/packages/*`
 * 插件: `/data/plugins/*.dll`
+* 开服器: `/data/starter/*.dll`
 
 EasyCraft 在开启时会自动从上述路径加载二次开发组件. 你也可以在 EasyCraft 控制台中输入
 
