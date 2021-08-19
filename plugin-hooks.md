@@ -4,7 +4,7 @@ EasyCraft 提供了一些插件钩子, 如果你还有想要开放的钩子可�
 
 请在 `EasyCraftPlugin.Plugin`下保留你想要监听的接口的同名静态方法.
 
-* OnServerWillStart
+* `OnServerWillStart`
 
   服务器将要开启
 
@@ -12,35 +12,30 @@ EasyCraft 提供了一些插件钩子, 如果你还有想要开放的钩子可�
 
   * 返回: `bool` 是否允许开服, 如不允许建议在服务器 ConsoleMessages 输出原因
 
-* OnServerWillStop
+* `OnServerWillStop`
 
   服务器将要停止
 
   * 传入: `id`: 服务器ID
   * 返回: `bool` 是否允许关服, 如如不允许建议在服务器 ConsoleMessages 输出原因.
 
-* OnServerStarted
+* `OnServerStarted`
 
   服务器已开启
 
   * 传入: `id`: 服务器ID
   * 返回: 无
 
-* OnServerStopped
+* `OnServerStopped`
 
   服务器已关闭
 
   * 传入: `id`: 服务器ID
   * 返回: 无
 
-  
-
-  
-
-## Api 请求
-
+* `OnApiRequest`
   接收到 API 请求
-
+  
   * 传入: `HttpContext`
   * 返回: Dictionary<string,object>()
     * block: 不再调用原本的 EasyCraft API 请求
