@@ -26,6 +26,6 @@
   * php7
   * php72
   * php8
-  * java8
-  * java7
+  * jdk8
+  * jdk7
 

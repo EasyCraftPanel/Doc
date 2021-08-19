@@ -1,13 +1,13 @@
 * 入门
-  * [快速开始](/)
+  * [快速开始](/#main)
   * [快速安装](/start-install)
-  * 快速测试
+  * [快速测试](/start-test)
 * 核心
   * [快速开始](/core-index.md)
   * [配置文件](/core-config)
   * 核心规范
 * 开服器
-  * 快速开始
+  * [快速开始](starter-index)
   * 进阶操作
 * 整合包
   * 快速开始
@@ -16,4 +16,5 @@
   * 整合包规范
 * 插件
   * [快速开始](/plugin-index)
-  * [插件结构](/plugin-structure)
+  * [交互流程](/plugin-lifecycle)
+  * [插件钩子](plugin-hooks)

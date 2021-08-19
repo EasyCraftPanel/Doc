@@ -13,30 +13,30 @@
 		"name": "[BDS] 1.17.11.01"
 	},
 	"startinfo": {
-		"program": "bedrock-server.exe", // 程序路径
-		"param": "" // 参数
+		"program": "bedrock-server.exe",
+		"param": ""
 	},
-	"configs": [ // 目前只支持简单对象的修改
+	"configs": [
 		{
             "file":"server.properties",
 			"name": "服务器配置文件",
-			"type": "properties", // json , ini , yaml , properties
+			"type": "properties",
 			"known": [
 				{
 					"key": "server-name",
 					"name": "服务器名称",
-					"type": 1, // 0 - 布尔值  1 - 文本型  2 - 选择器型
-					"visible": true // 默认为 可视
+					"type": "text",
+					"visible": true
 				},
 				{
 					"key": "gamemode",
 					"name": "游戏模式",
-					"type": 2,
+					"type": "select",
 					"visible": true,
-					"selection":[ // 选择器选项
+					"selection":[
 					{
-						"value": "survival", // 值
-						"display": "生存" // 显示
+						"value": "survival",
+						"display": "生存"
 					},
 					{
 						"value": "creative",
@@ -53,15 +53,15 @@
 					"key": "server-port",
 					"name": "服务器端口",
 					"visible": false,
-					"type": 1,
-					"force": true, // 是否强制更改
-					"value": "{{PORT}}"	// 强制更改的值	
+					"type": "text",
+					"force": true,
+					"value": "{{PORT}}"
 				},
 				{
 					"key": "max-players",
 					"name": "玩家数",
 					"visible": false,
-					"type": 1,
+					"type": "text",
 					"force": true,
 					"value": "{{PLAYER}}"
 				}
@@ -90,20 +90,46 @@
 
 ## configs
 
-> 你也可以为了减小核心配置体积,将此配置项单独出来放置在一个json文件中, 如 `bds-config.json` ,然后将其放置在 `/data/cores/configs` 目录下. 在 `configs` 处你只需要填写 `bds-config`. 此文件内容格式同`configs` 的格式.
+> 你也可以为了减小核心配置体积,将此配置项单独出来放置在一个json文件中 
+>
+> 如 `bds-config.json` ,然后将其放置在 `/data/cores/configs` 目录下. 
+>
+> 在 `configs` 处你只需要填写 `bds-config`
+>
+> 此文件内容格式同`configs` 的格式.
 
 服务器的配置项 
 
 * `file`: 配置文件名
 * `name`: 文件友好名称,显示在前端
-* `type`: 文件类型 (可选类型 `properties` , `json` , `yaml` , `ini`)
+* `type`: 文件类型 (可选类型 `properties` , `json` , `yaml` , `ini`,`linearray`, `jsonarray`,`yamlpure`)
 * `known`: 已知的配置项数组
 
 ### known
 
 * `key`: 配置项在文件中的名称
+
+  * 当文件类型为 `properties` 时,请输入配置项名称
+  * 当文件类型为 `json` 时,请输入 [JSONPath](https://goessner.net/articles/JsonPath/)
+  * 当文件类型为 `ini`时, 请输入 `[配置节]配置项`
+  * 当文件类型为 `linearray`时, 请输入 `$index`
+  * 当文件类型为 `jsonarray`时,请将设置为 `{"项key":"友好名称"}` 此时将默认 `type` 为 `text`
+  * 当文件类型为 `yaml`时,请输入其转换为 JSON 后的 [JSONPath](https://goessner.net/articles/JsonPath/)
+  
+  
+
+!> 由于对 `yaml`的不完全支持, 我们将会把 Yaml 转换为JSON进行处理. 在后期版本我们将会对 yaml 进行适配
+
+> 如果你想要使用真实的`yaml`,请将文件类型设置为 `yamlpure`. 请确保你的 `yml` 文件为 
+>
+> 节点一 
+>
+> &nbsp;&nbsp;&nbsp;&nbsp;子节点 : 值.  
+>
+> &nbsp;&nbsp;&nbsp;&nbsp;子节点 : 值
+
 * `display`: 配置项的友好名称
-* `type`: 配置项类型 ( `0` - 布尔值  `1` - 文本型  `2` - 选择器型)
+* `type`: 配置项类型 ( `toggle` - 布尔值  `text` - 文本型  `select` - 选择器型)
 * `visible`: 是否在前端可视 (默认: `true`)
 * `selection`: 选择器选项数组
   * `display`: 友好名称,将会显示到前端
