@@ -18,3 +18,4 @@
   * [快速开始](/plugin-index)
   * [交互流程](/plugin-lifecycle)
   * [插件钩子](plugin-hooks)
+  * [插件API](/plugin-api)

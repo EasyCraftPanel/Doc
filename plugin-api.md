@@ -2,6 +2,8 @@
 
 我们提供了一些插件 API, 方便插件随时调用
 
+如果你还有想要开放的API可以 [发起Issue](https://github.com/EasyCraftPanel/EasyCraft/issues/new/choose) 或者 进行 Pull Request.
+
 !> 请在 Auth 中传入你需要调用的 API, 否则在调用的时候将不会返回
 
 * `FastConsole.PrintInfo`: 控制台输出 INFO 信息
@@ -53,7 +55,7 @@
 
   * 返回: `UserInfoBase`: 用户信息
 
-    可用 dynamic获取,参见 [UserInfoBase](https://github.com/EasyCraftPanel/EasyCraft/blob/main/EasyCraft/Base/User/UserInfoBase.cs)
+    可用 dynamic获取,参见 [UserInfoBase](https://github.com/EasyCraftPanel/EasyCraft/blob/main/EasyCraft/Base/User/UserInfoBase.cs) 请注意: 你无法直接更改此项且密码为MD5加密
 
 * `User.GetUserIdByName`: 通过用户名获取用户ID
 
