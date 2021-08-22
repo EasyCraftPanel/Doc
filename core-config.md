@@ -13,8 +13,10 @@
 		"name": "[BDS] 1.17.11.01"
 	},
 	"startinfo": {
-		"program": "bedrock-server.exe",
-		"param": ""
+        "windows":{
+            "program": "{{SERVERDIR}}/bedrock-server.exe",
+			"param": ""
+        }
 	},
 	"configs": [
 		{
@@ -84,6 +86,10 @@
 ## startinfo
 
 此参数为启动类型, 将会在开启前传递给开服器进行开服. 此处的参数允许使用 [服务器变量](/core-servervar)
+
+* `key`: 系统版本 (`windows`,`linux`)
+
+  在开服时若不包含当前运行系统将不会开服
 
 * `program`: 程序路径
 * `param`: 参数
