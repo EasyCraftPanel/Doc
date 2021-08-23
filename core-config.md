@@ -18,6 +18,10 @@
 			"param": ""
         }
 	},
+    "console": {
+        "input": "utf8",
+        "output":"utf8"
+    },
 	"configs": [
 		{
             "file":"server.properties",
@@ -92,7 +96,18 @@
   在开服时若不包含当前运行系统将不会开服
 
 * `program`: 程序路径
+
 * `param`: 参数
+
+## console
+
+此参数为控制台的文字编码, 内容可参考 [Encoding 类 文档](https://docs.microsoft.com/zh-cn/dotnet/api/system.text.encoding)
+
+若不存在此参数则为 `default`, 为系统默认
+
+`input`: 输入编码
+
+`output`: 输出编码
 
 ## configs
 
